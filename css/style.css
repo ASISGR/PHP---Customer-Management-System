@@ -1,0 +1,12 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.registerForm{
+    border: 1px solid rgba(0,0,0,0.4);
+    padding: 6vh;
+    margin-top: 15vh;
+    border-radius: 10px;
+}
