@@ -2,15 +2,37 @@
 include_once 'class.db.php';
 
 class Customer extends Dbh{
-   /* private $firstName;
+    private $firstName;
     private $lastName;
     private $email;
     private $address;
     private $phone;
     private $comment;
     private $registered_at;
-    private $status;*/
+    private $status = 1;
     private $perPage = 10;
+
+    public function CreateCustomer($fName, $lName, $mail, $addr, $pNubmer, $comment){
+        $this->firstName = $fName;
+        $this->lastName = $lName;
+        $this->email = $mail;
+        $this->address = $addr;
+        $this->phoneNumber = $pNubmer;
+        $this->comment = $comment;
+
+        if($this->firstName == NULL || $this->lastName == NULL || $this->email == NULL || $this->address == NULL || $this->phoneNumber == NULL ||  $this->comment == NULL)
+        {
+            header("Location: /pages/addcustomer.php?ErrorEmptyInputs");
+            $this->conn = NULL;
+        }
+        
+        $sql = "INSERT INTO customers (firstname, lastname, email, address, phone, comments, active) VALUES (?,?,?,?,?,?,?)";
+
+        $this->conn->prepare($sql)->execute([$this->firstName, $this->lastName, $this->email, $this->address, $this->phoneNumber, $this->comment,  $this->status]);
+        $this->conn = NULL;
+        header("Location: /pages/addcustomer.php?customerCreated");
+    }
+
 
     public function UpdateCustomer($cid, $fname, $lname, $email, $address, $phone, $comment, $status){
 

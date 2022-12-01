@@ -51,7 +51,7 @@ session_start();
         <?php
           if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
             echo '<div class="container">
-                <a class="btn btn-primary" href="/pages/register.php">Add Administrator</a>
+                <a class="btn btn-primary" href="/pages/addadmin.php">Add Administrator</a>
                 <a class="btn btn-danger" href="/includes/logout.inc.php">Logout</a>
                 </div>';
           }else{

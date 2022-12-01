@@ -8,8 +8,11 @@
 
 <div class="container">
 <form class="d-flex bg-dark" style="justify-content:space-between; margin-top:0.5vh; padding:1vh" action="../includes/searchCustomer.inc.php" method="GET" ">
-        <input style="max-width:450px;margin-right:3vh"class="form-control" type="text" name="input" placeholder="Search Customer by Mail or Phonenumber" required>
-        <button class="btn btn-primary" name="Btn-FindSpecificCust" type="submit">Find Customer</button>
+        <span style='display:flex'>
+            <input  type="text" style='margin-right:2vh'name="input" placeholder="Search Customer by Mail or Phonenumber" required>
+            <button class="btn btn-primary" name="Btn-FindSpecificCust" type="submit">Find Customer</button>
+        </span>
+        <a class="btn btn-primary" href="addcustomer.php ">Add customer</a>
 </form>
 <?php include_once '../includes/errorhandler.inc.php';?>
 <div class="table-responsive">

@@ -7,6 +7,14 @@
             </div>';
     }
 
+    if(isset($_GET['customerCreated']))
+    {
+        echo '
+            <div class="alert alert-success" role="alert">
+                Your customer has been insearted to the database!
+            </div>';
+    }
+
     if(isset($_GET['ErrorEmptyInputs']))
     {
         echo '

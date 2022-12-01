@@ -22,7 +22,7 @@ class User extends Dbh{
 
         if($this->username == NULL || $this->email == NULL || $this->password == NULL || $this->password == NULL || $this->firstName == NULL ||  $this->lastName == NULL || $this->phoneNumber == NULL || $this->address == NULL)
         {
-            header("Location: /pages/register.php?ErrorEmptyInputs");
+            header("Location: /pages/addadmin.php?ErrorEmptyInputs");
             $this->conn = NULL;
         }
         
@@ -30,7 +30,7 @@ class User extends Dbh{
 
         $this->conn->prepare($sql)->execute([$this->username, $this->password, $this->email, $this->firstName, $this->lastName, $this->phoneNumber, $this->address]);
         $this->conn = NULL;
-        header("Location: /pages/register.php?passwordCreated");
+        header("Location: /pages/addadmin.php?passwordCreated");
     }
 
     public function login($uname, $passwd){
