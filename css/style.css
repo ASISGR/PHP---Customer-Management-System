@@ -10,3 +10,22 @@
     margin-top: 15vh;
     border-radius: 10px;
 }
+
+.active{
+    background-color: #0d6efd;
+
+}
+
+a::after{
+    color: white;
+}
+
+.container-search{
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+    
+}
+.container-search .form-control{
+    max-width: 200px;
+}

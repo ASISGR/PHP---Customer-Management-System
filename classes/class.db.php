@@ -7,7 +7,7 @@ class Dbh{
 
     function __construct() {
         $this->host_name = "localhost";
-        $this->dbname = "AdatabaseS";
+        $this->dbname = "adatabases";
         $this->username = "root";
         $this->password = "";
         try {
