@@ -42,7 +42,16 @@ session_start();
         <?php
           if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
             echo '<li class="nav-item"><a href="/pages/adminprofile.php" class="nav-link" aria-current="page">My Profile</a></li> 
-                  <li class="nav-item"><a href="/pages/customerslist.php"  class="nav-link">View Customer\'s</a></li>';
+                  
+                  <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="/pages/customerslist.php" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  View Customer\'s
+                  </a>
+                  <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="/pages/customerslist.php?active=1"">Active Customers</a></li>
+                    <li><a class="dropdown-item" href="/pages/customerslist.php?active=0">Inactive Customers</a></li>
+                  </ul>
+                </li>';
           }
         ?>
           

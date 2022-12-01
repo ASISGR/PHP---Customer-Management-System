@@ -1,8 +1,11 @@
 <?php
      require_once '../includes/navbar.inc.php';
+//     require_once '../classes/class.users.php';
      if(!isset($_SESSION["loggin"])){
         header("Location: /?noacces");
       }
+//      $obj = new User();
+//      echo $obj->GetUsers();
 ?>
 <div class="container">
         <form class="registerForm" action="../includes/registerAdmin.inc.php" method="POST">

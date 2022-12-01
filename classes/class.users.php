@@ -11,7 +11,17 @@ class User extends Dbh{
     private $phoneNumber;
     private $address;
 
-   public function CreateUser($uname, $pass, $mail, $fName, $lName, $pNubmer, $addr){
+    public function GetUsers(){
+        $sql = "SELECT * FROM administrator";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $users = $stmt->fetchAll();
+
+        return $users; 
+    } 
+
+    public function CreateUser($uname, $pass, $mail, $fName, $lName, $pNubmer, $addr){
         $this->username = $uname;
         $this->password = $pass;
         $this->email = $mail;
@@ -20,12 +30,34 @@ class User extends Dbh{
         $this->phoneNumber = $pNubmer;
         $this->address = $addr;
 
+
+
         if($this->username == NULL || $this->email == NULL || $this->password == NULL || $this->password == NULL || $this->firstName == NULL ||  $this->lastName == NULL || $this->phoneNumber == NULL || $this->address == NULL)
         {
             header("Location: /pages/addadmin.php?ErrorEmptyInputs");
             $this->conn = NULL;
         }
-        
+
+        foreach($this->GetUsers() as $GetUser) //checking foreach for multiple registration rows.
+        {
+            
+            if(strtolower($GetUser['username']) == strtolower($uname)) // Username check
+            {
+                header("Location: /pages/addadmin.php?UsernameExists");
+                $this->conn = NULL;
+            }
+
+            if(strtolower($GetUser['email']) == strtolower($mail)) // email check
+            {
+                header("Location: /pages/addadmin.php?EmailExists");
+                $this->conn = NULL;
+            }
+            if(strtolower($GetUser['phone']) == strtolower($pNubmer)) // phone check
+            {
+                header("Location: /pages/addadmin.php?PhoneExists");
+                $this->conn = NULL;
+            }
+        }
         $sql = "INSERT INTO administrator (username, password, email, firstname, lastname, phone, address) VALUES (?,?,?,?,?,?,?)";
 
         $this->conn->prepare($sql)->execute([$this->username, $this->password, $this->email, $this->firstName, $this->lastName, $this->phoneNumber, $this->address]);

@@ -14,7 +14,28 @@
                 Your customer has been insearted to the database!
             </div>';
     }
-
+    
+    if(isset($_GET['UsernameExists']))
+    {
+        echo '
+            <div class="alert alert-danger" role="alert">
+                Username already exists!
+            </div>';
+    }
+    if(isset($_GET['EmailExists']))
+    {
+        echo '
+            <div class="alert alert-danger" role="alert">
+                Email already exists!
+            </div>';
+    }
+    if(isset($_GET['PhoneExists']))
+    {
+        echo '
+            <div class="alert alert-danger" role="alert">
+                Phone number already exists!
+            </div>';
+    }
     if(isset($_GET['ErrorEmptyInputs']))
     {
         echo '

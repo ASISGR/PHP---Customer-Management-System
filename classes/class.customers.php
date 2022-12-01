@@ -44,8 +44,23 @@ class Customer extends Dbh{
 
     }
 
+    public function GetActiveKey(){
+        $Active = isset($_GET['active']) ? $_GET['active'] : 1;
+
+        return $Active;
+    }
+
     public function GetRows(){
-        $sql = "SELECT * FROM customers";
+        
+        if($this->GetActiveKey() == 1)
+        {
+            $sql = "SELECT * FROM customers WHERE active = 1";
+        }else if($this->GetActiveKey() == 0)
+        $sql = "SELECT * FROM customers WHERE active = 0";
+        else{
+            $sql = "SELECT * FROM customers";
+        }
+     
 
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
@@ -169,7 +184,6 @@ class Customer extends Dbh{
 
 
     public function GetCustomers(){
-
         $pageNow = isset($_GET['page']) ? $_GET['page'] : 1;
         $x = ($pageNow - 1) * $this->perPage;
         $y = $this->perPage;
@@ -177,10 +191,16 @@ class Customer extends Dbh{
         
         if($pageNow > 1)
         {
-            $number = ($pageNow*$this->perPage);
+            $number = (($pageNow -1) *$this->perPage);
         }
-
-        $sql = "SELECT * FROM customers LIMIT $x, $y";
+        if($this->GetActiveKey() == 1)
+        {
+            $sql = "SELECT * FROM customers WHERE active = 1 LIMIT $x, $y";
+        }else if($this->GetActiveKey() == 0)
+        $sql = "SELECT * FROM customers WHERE active = 0 LIMIT $x, $y";
+        else{
+            $sql = "SELECT * FROM customers LIMIT $x, $y";
+        }
      
         $stmt = $this->conn->prepare($sql);
         $stmt->execute();
@@ -218,7 +238,7 @@ class Customer extends Dbh{
         $totalPages = ceil($count / $this->perPage);
         echo '<nav aria-label="Page navigation example"><ul class="pagination">';
         for($i = 1; $i<= $totalPages; $i++){
-            echo '<li class="page-item"><a class="page-link" href="?page='.$i.'">'.$i.'</a></li>';
+            echo '<li class="page-item"><a class="page-link" href="?page='.$i.'&active='.$this->GetActiveKey().'">'.$i.'</a></li>';
         }
         echo '</ul></nav>';
 
