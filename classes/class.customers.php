@@ -12,6 +12,16 @@ class Customer extends Dbh{
     private $status = 1;
     private $perPage = 10;
 
+    public function GetCustomersDetails(){
+        $sql = "SELECT * FROM customers";
+
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $customers = $stmt->fetchAll();
+
+        return $customers; 
+    } 
+
     public function CreateCustomer($fName, $lName, $mail, $addr, $pNubmer, $comment){
         $this->firstName = $fName;
         $this->lastName = $lName;
@@ -25,7 +35,22 @@ class Customer extends Dbh{
             header("Location: /pages/addcustomer.php?ErrorEmptyInputs");
             $this->conn = NULL;
         }
-        
+
+        foreach($this->GetCustomersDetails() as $GetCustomerDetail) //checking foreach for multiple registration rows.
+        {
+            
+            if(strtolower($GetCustomerDetail['email']) == strtolower($mail)) // email check
+            {
+                header("Location: /pages/addadmin.php?EmailExists");
+                $this->conn = NULL;
+            }
+            if(strtolower($GetCustomerDetail['phone']) == strtolower($pNubmer)) // phone check
+            {
+                header("Location: /pages/addcustomer.php?PhoneExists");
+                $this->conn = NULL;
+            }
+        }
+
         $sql = "INSERT INTO customers (firstname, lastname, email, address, phone, comments, active) VALUES (?,?,?,?,?,?,?)";
 
         $this->conn->prepare($sql)->execute([$this->firstName, $this->lastName, $this->email, $this->address, $this->phoneNumber, $this->comment,  $this->status]);
