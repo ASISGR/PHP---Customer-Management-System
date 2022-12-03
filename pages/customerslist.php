@@ -7,12 +7,12 @@
 ?>
 
 <div class="container">
-<form class="d-flex bg-dark" style="justify-content:space-between; margin-top:0.5vh; padding:1vh" action="../includes/searchCustomer.inc.php" method="GET" ">
-        <span style='display:flex'>
-            <input  type="text" style='margin-right:2vh'name="input" placeholder="Search Customer by Mail or Phonenumber" required>
-            <button class="btn btn-primary" name="Btn-FindSpecificCust" type="submit">Find Customer</button>
-        </span>
-        <a class="btn btn-primary" href="addcustomer.php ">Add customer</a>
+<form class="d-flex bg-dark " style="justify-content:space-between; margin-top:0.5vh; padding:1vh" action="../includes/searchCustomer.inc.php" method="GET" ">
+        <div class = "container">
+            <input  type="text" style="" class='form-label'name="input" placeholder="Search Customer by Mail or Phonenumber" required>
+            <button class="btn btn-primary fas fa-search" name="Btn-FindSpecificCust" type="submit"></button>
+            <a style='float:right'class="btn btn-primary" href="addcustomer.php ">Add customer</a>
+        </div>
 </form>
 <?php include_once '../includes/errorhandler.inc.php';?>
 <div class="table-responsive">

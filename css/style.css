@@ -30,3 +30,10 @@ a::after{
     max-width: 200px;
 }
 
+.dropdown-item{
+    color:white;
+}
+.dropdown-item:hover{
+    color:white;
+    background-color: rgba(0,0,0,0.4);
+}
