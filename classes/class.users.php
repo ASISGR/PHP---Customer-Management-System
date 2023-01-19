@@ -60,13 +60,13 @@ class User extends Dbh{
         }
         $sql = "INSERT INTO administrator (username, password, email, firstname, lastname, phone, address) VALUES (?,?,?,?,?,?,?)";
 
-        $this->conn->prepare($sql)->execute([$this->username, $this->password, $this->email, $this->firstName, $this->lastName, $this->phoneNumber, $this->address]);
+        $this->conn->prepare($sql)->execute([$this->username, md5($this->password), $this->email, $this->firstName, $this->lastName, $this->phoneNumber, $this->address]);
         $this->conn = NULL;
         header("Location: /pages/addadmin.php?passwordCreated");
     }
 
     public function login($uname, $passwd){
-
+        $passwd =  md5($passwd);
         if($uname == NULL || $passwd == NULL)
         {
             header("Location: /?ErrorEmptyInputs");
@@ -75,7 +75,7 @@ class User extends Dbh{
 
         $sql = "SELECT username,password FROM  administrator WHERE  username = ? AND password = ?";
         $stmt = $this->conn->prepare($sql);
-        $stmt->execute([$uname,$passwd]);
+        $stmt->execute([$uname, $passwd]);
         $count = $stmt->rowCount();
       //  echo $count;
         if($count > 0){

@@ -15,9 +15,12 @@ $AdminObj = new User();
             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
             <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
             alt="Avatar" class="img-fluid my-5" style="width: 280px;" />
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" id="">
+            </form>
+            <br>
             <h5><?php echo $AdminObj->GetFname().' '. $AdminObj->GetLName(); ?></h5>
             <p>Web Designer</p>
-            <i class="far fa-edit mb-5"></i>
         </div>
         <div class="col-md-8">
             <div class="card-body p-4">

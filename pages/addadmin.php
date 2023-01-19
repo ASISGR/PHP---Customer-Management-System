@@ -17,6 +17,7 @@
                 <label for="usernameinput" class="form-label">Username</label>
                 <input type="username" name="username" class="form-control" id="usernameinput">
                 <div id="usernameinput" class="form-text">Username of new Administrator.</div>
+                <div id="usernameAlert" style="display:none" class="alert alert-danger" role="alert">Username must contain at least 8 characters!</div>
             </div>
             <div class="mb-3">
                 <label for="mailinput" class="form-label">Email address</label>
@@ -48,7 +49,7 @@
                 <input type="text" placeholder="e.g.(Street, Number, City, Postcode, Country)" name="adrressInput" class="form-control" id="Addressinput">
                 <div id="Addressinput" class="form-text">Address of new Administrator.</div>
             </div>
-            <button type="submit" name='btn_Aregister' class="btn btn-primary">Create Admin</button>
+            <button type="submit" name='btn_Aregister' class="btn btn-success">Create Admin</button>
         </form>
 </div>
 <?php

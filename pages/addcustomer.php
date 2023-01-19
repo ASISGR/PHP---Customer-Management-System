@@ -10,15 +10,15 @@
                 <?php
                 include_once '../includes/errorhandler.inc.php';
                 ?>
-            <div class="mb-3">
+            <div class="mb-3" id ='fnamediv'>
                 <label for="firstnameinput" class="form-label">First Name</label>
                 <input type="text" name="fistName" class="form-control" id="firstnameinput">
                 <div id="firstnameinput" class="form-text">First Name of new Customer.</div>
             </div>
-            <div class="mb-3">
-                <label for="firstnameinput" class="form-label">Last Name</label>
-                <input type="text" name="lastName" class="form-control" id="firstnameinput">
-                <div id="firstnameinput" class="form-text">Last Name of new Customer.</div>
+            <div class="mb-3" id ='lnamediv'>
+                <label for="lastnameinput" class="form-label">Last Name</label>
+                <input type="text" name="lastName" class="form-control" id="lastnameinput">
+                <div id="lastnameinput" class="form-text">Last Name of new Customer.</div>
             </div>   
             <div class="mb-3">
                 <label for="mailinput" class="form-label">Email address</label>
@@ -41,7 +41,7 @@
                 <div id="Commentinput" class="form-text">Comment about your new Customer.</div>
             </div>
 
-            <button type="submit" name='btn_Cregister' class="btn btn-primary">Create Customer</button>
+            <button type="submit" name='btn_Cregister' class="btn btn-success">Create Customer</button>
         </form>
 </div>
 <?php

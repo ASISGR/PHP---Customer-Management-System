@@ -21,8 +21,8 @@ if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
 
           <form action="includes/login.inc.php" method="POST">
             <!-- Username input -->
-            <div class="form-outline mb-4">
-              <label class="form-label" for="form2Example1">Username</label>
+            <div class="form-outline mb-4" id=''>
+              <label class="form-label" id="form2Example1text">Username</label>
               <input type="username" name='username' id="form2Example1" class="form-control" />
             </div>
 

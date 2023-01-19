@@ -54,7 +54,7 @@
             </div>
             <input type="hidden" name="id" value="<?php echo $id ?>" />
 
-            <button type="submit" name='btn-save' class="btn btn-primary">Save changes</button>
+            <button type="submit" name='btn-save' class="btn btn-success">Save changes</button>
         </form>
 </div>
 
