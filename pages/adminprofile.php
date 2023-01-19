@@ -13,7 +13,7 @@ $AdminObj = new User();
         <div class="row g-0">
         <div class="col-md-4 gradient-custom text-center"
             style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-            <img src="https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg"
+            <img src="../images/userIMG.png"
             alt="Avatar" class="img-fluid my-5" style="width: 280px;" />
             <form action="" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" id="">

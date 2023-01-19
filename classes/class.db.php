@@ -1,5 +1,5 @@
 <?php
-
+// connecting one time with database.
 class Dbh{
 
     private $hostname, $dbname, $username, $password;

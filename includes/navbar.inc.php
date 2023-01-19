@@ -25,7 +25,6 @@ session_start();
           if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
             echo '<span style=""class="fs-6">Administrator: <u>'. $_SESSION['username']. '</u></span>';
           }
-
     ?>
     </header>
 </div>
@@ -73,5 +72,5 @@ session_start();
     </div>
   </div>
 </nav>
-
+          
 </div>

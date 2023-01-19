@@ -1,11 +1,9 @@
 <?php
      require_once '../includes/navbar.inc.php';
-//     require_once '../classes/class.users.php';
+    //check if user is not loggin then redirect to login Page
      if(!isset($_SESSION["loggin"])){
         header("Location: /?noacces");
       }
-//      $obj = new User();
-//      echo $obj->GetUsers();
 ?>
 <div class="container">
         <form class="registerForm" action="../includes/registerAdmin.inc.php" method="POST">
@@ -17,7 +15,6 @@
                 <label for="usernameinput" class="form-label">Username</label>
                 <input type="username" name="username" class="form-control" id="usernameinput">
                 <div id="usernameinput" class="form-text">Username of new Administrator.</div>
-                <div id="usernameAlert" style="display:none" class="alert alert-danger" role="alert">Username must contain at least 8 characters!</div>
             </div>
             <div class="mb-3">
                 <label for="mailinput" class="form-label">Email address</label>

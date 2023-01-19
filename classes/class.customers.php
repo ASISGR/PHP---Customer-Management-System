@@ -1,6 +1,6 @@
 <?php
 include_once 'class.db.php';
-
+// Here we managing all the information and actions with the customers.
 class Customer extends Dbh{
     private $firstName;
     private $lastName;

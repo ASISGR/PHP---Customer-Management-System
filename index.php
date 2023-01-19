@@ -1,10 +1,11 @@
 <?php
+//Including the classes to call them.
 include_once 'classes/class.db.php';
 include_once 'classes/class.users.php';
 require_once 'includes/navbar.inc.php';
+//checking if we are logged.
 if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
-  //echo 'you are logged';
-  header("Location: /pages/adminprofile.php");
+  header("Location: /pages/adminprofile.php"); // redirect to adminpanel if login is true 
 }
 ?>
 
@@ -12,12 +13,12 @@ if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
 <div class="card mb-3">
     <div class="row g-0 d-flex align-items-center">
       <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
+        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="LoginAreaImage"
           class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
       </div>
       <div class="col-lg-8">
         <div class="card-body py-5 px-md-5">
-        <?php include_once 'includes/errorhandler.inc.php'; ?>
+        <?php include_once 'includes/errorhandler.inc.php'; ?> <!-- call Notification's -->
 
           <form action="includes/login.inc.php" method="POST">
             <!-- Username input -->
