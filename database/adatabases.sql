@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Φιλοξενητής: 127.0.0.1
--- Χρόνος δημιουργίας: 19 Ιαν 2023 στις 11:37:51
+-- Χρόνος δημιουργίας: 03 Φεβ 2023 στις 12:42:09
 -- Έκδοση διακομιστή: 10.4.13-MariaDB
 -- Έκδοση PHP: 7.4.7
 
@@ -45,9 +45,10 @@ CREATE TABLE `administrator` (
 
 INSERT INTO `administrator` (`id`, `username`, `password`, `email`, `firstname`, `lastname`, `phone`, `address`, `created_at`) VALUES
 (1, 'Admin127', 'fd12476088b4df81f4634ca9144f6950', 'admin@gmail.com', 'tasos', 'dimitriadis', '6989168354', 'Iwannh kragia 4 56121 ampelokipi thessaloniki', '2022-11-30'),
-(2, 'AdminTest', 'fd12476088b4df81f4634ca9144f6950', 'test@gmail.com', 'admin', 'testadmin', '6989168355', 'Iwannh kragia 4 56121 ampelokipi thessaloniki', '2022-11-30'),
-(3, 'Admin0', 'fd12476088b4df81f4634ca9144f6950', 'aooo@gmail.com', 'admindd', 'adminn', '494949494', 'fkjiefi', '2022-12-08'),
-(4, 'Admin022', 'fd12476088b4df81f4634ca9144f6950', 'aooeo@gmail.com', 'admindd', 'adminn', '494949493214', 'fkjiefi', '2022-12-08');
+(84, 'jyvuqujoh', 'fd12476088b4df81f4634ca9144f6950', 'zocob@mailinator.com', 'Warren', 'Morrow', '+1 (395) 992-8812', 'Ut iure nisi veniam', '2023-02-02'),
+(85, 'mydij', 'fd12476088b4df81f4634ca9144f6950', 'fafywy@mailinator.com', 'Hadley', 'Carroll', '+1 (544) 823-6513', 'Duis nulla pariatur', '2023-02-02'),
+(86, 'syjyj', 'fd12476088b4df81f4634ca9144f6950', 'zulymerim@mailinator.com', 'Beverly', 'Beasley', '+1 (438) 508-7834', 'Quaerat consectetur', '2023-02-02'),
+(87, 'tunubyluge', 'fd12476088b4df81f4634ca9144f6950', 'bigetaj@mailinator.com', 'Kevyn', 'Lloyd', '+1 (621) 368-5681', 'Vero excepteur maxim', '2023-02-02');
 
 -- --------------------------------------------------------
 
@@ -72,29 +73,17 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `firstname`, `lastname`, `address`, `phone`, `email`, `comments`, `registered_at`, `active`) VALUES
-(3, 'Kwstas', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:11', 1),
-(4, 'Alex', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:14', 0),
-(5, 'Dionisis', 'mdoeddd', 'salougka skg re 6, 51224 thessaloniki', '45923494848', 'Dikomo@gmail.com', 'ssssssssssssssssssssss', '2022-11-30 10:10:21', 1),
-(6, 'Antreas', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:24', 1),
-(7, 'Kuriakos', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:28', 0),
-(8, 'Spiros', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:30', 1),
-(9, 'Giannis', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-28 12:59:16', 0),
-(10, 'Teo', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-28 16:17:09', 1),
-(11, 'Lampros', 'georgiou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:40', 0),
-(12, 'Thanasis', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:43', 0),
-(13, 'Petros', 'Πέτρου', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:48', 0),
-(14, 'Xarhs', 'Δημητριάδης', 'Ιωάννη Κραγιά 4, 51621 Αμπελόκοιπη', '6989168354', 'asisgr01@gmail.com', 'Έχει κάνει τις περισσότερες πωλήσεις τον τελευταίο μήνα.', '2022-11-30 10:10:54', 1),
-(15, 'Loukas', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168355', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:10:58', 0),
-(16, 'Zisis', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:11:05', 1),
-(17, 'Sakis', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'Δοκιμή ρε', '2022-12-09 10:17:32', 1),
-(18, 'Antonis', 'mdoeddd', 'salougka skg re 6, 51224 thessaloniki', '45923494848', 'Dikomo@gmail.com', 'ssssssssssssssssssssss', '2022-11-30 10:11:15', 1),
-(19, 'Xaralampos', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:11:23', 1),
-(20, 'Rafail', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:11:26', 0),
-(22, 'Mixalis', 'Petrou', 'antoniou poliksenis 6, 51224 thessaloniki', '6989168354', 'GiorgosPetrou@gmail.com', 'texttttttttttt', '2022-11-30 10:11:50', 0),
-(27, 'Thanos', 'Nikou', 'street 5, 54214 boston USA', '6989146217', 'nikou@gmail.com', 'New customer', '2022-12-01 14:18:03', 1),
-(28, 'test', 'test2', 'odos', '696696969', 'test@gmail.com', 'commnet', '2022-12-02 11:59:52', 0),
-(29, 'fweqfewq', 'fwqefewqf', 'fewfqwffff', '6969969696', 'fewfew@gmail.com', 'fewqff', '2022-12-02 12:00:20', 1),
-(30, 'Γιάννης', 'Πέτρου', 'agamisou 42', '49328481244', 'fjewjfiewjfi@gmail.com', 'mjif4jwjij38f3wj8κομμεντ', '2022-12-06 20:47:45', 1);
+(32, 'CustomerName', 'CustomerLastname', 'Customer Address 9 Greece', '6989168354', 'customer@gmail.com', 'I am just a test customer', '2023-02-02 19:19:51', 0),
+(33, 'Jannis', 'Kocher', 'Kirchstrasse 40 Lorch 73547 Deutschland', '4321432152', 'kocher@gmail.com', 'Jannis hat eine Bäckerei', '2023-02-03 11:41:09', 1),
+(34, 'Xantha', 'Kim', 'Asperiores consectet', '6342643223', 'pewybypi@mailinator.com', 'Cumque mollitia libe', '2023-02-03 11:41:13', 1),
+(35, 'Noelani', 'Galloway', 'Hic perferendis sed ', '634257279', 'sofujugof@mailinator.com', 'Impedit quod rerum ', '2023-02-03 11:41:17', 1),
+(36, 'Upton', 'Duran', 'Irure elit aliqua ', '7876432456', 'gepod@mailinator.com', 'Ad fugit recusandae', '2023-02-03 11:41:20', 1),
+(37, 'Hamilton', 'Gregory', 'Do perferendis provi', '8563654326', 'wuwywyrily@mailinator.com', 'Vero est excepturi r', '2023-02-03 11:41:23', 1),
+(38, 'Robin', 'Barker', 'Quae veritatis dicta', '6342643256642', 'xapic@mailinator.com', 'Voluptatum sunt omn', '2023-02-03 11:41:26', 1),
+(39, 'Hammett', 'William', 'Rerum corporis venia', '4323887482', 'hycuse@mailinator.com', 'Nemo dolor quia aliq', '2023-02-03 11:40:56', 0),
+(40, 'Marcia', 'William', 'Pariatur Quod maxim', '4353427723', 'cusazyxiba@mailinator.com', 'Doloribus eum mollit', '2023-02-03 11:41:02', 0),
+(41, 'Linda', 'Jennings', 'Nulla tenetur est do', '76515252314', 'juqoritef@mailinator.com', 'Accusamus optio Nam', '2023-02-03 11:41:05', 0),
+(42, 'Howard', 'Brewer', 'Sunt a voluptatum d', '346565775234', 'witibeto@mailinator.com', 'Amet dolores distin', '2023-02-03 11:41:30', 1);
 
 --
 -- Ευρετήρια για άχρηστους πίνακες
@@ -123,13 +112,13 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT για πίνακα `administrator`
 --
 ALTER TABLE `administrator`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT για πίνακα `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,22 +1,27 @@
 <?php
 // connecting one time with database.
-class Dbh{
 
-    private $hostname, $dbname, $username, $password;
-    protected $conn;
+class Dbh {
 
-    function __construct() {
-        $this->host_name = "localhost";
-        $this->dbname = "adatabases";
-        $this->username = "root";
-        $this->password = "";
+    function conn(){
+
+        $host = 'localhost';
+        $dbname = 'adatabases';
+        $user = 'root';
+        $pass = '';
+
         try {
-            $this->conn = new PDO("mysql:host=$this->host_name;dbname=$this->dbname", $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo 'Error: ' . $e->getMessage();
+            $DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);
+            $DBH->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            return $DBH;
         }
-    }
-    
-}
+        catch(PDOException $e) {
+
+            echo 'ERROR: ' . $e->getMessage();
+        }
+
+    } 
+
+} 
 ?> 

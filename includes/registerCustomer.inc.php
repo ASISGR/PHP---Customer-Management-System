@@ -1,6 +1,6 @@
 <?php 
 include_once '../classes/class.db.php';
-include_once '../classes/class.customers.php';
+include_once '../classes/class.customersCntrl.php';
 
 if(isset($_POST['btn_Cregister']))
 {
@@ -10,7 +10,7 @@ if(isset($_POST['btn_Cregister']))
     $phone = $_POST['Phone'];
     $adrress = $_POST['adrressInput'];
     $comment = $_POST['commentInput'];
-    $NewAcc = new Customer();
-    $NewAcc->CreateCustomer($fName, $lName, $mail, $adrress, $phone, $comment);
+    $customerCreate = new CustomerCntrl();
+    $customerCreate->CreateCustomer($fName, $lName, $mail, $adrress, $phone, $comment);
 }
 ?>

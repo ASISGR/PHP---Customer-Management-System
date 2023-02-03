@@ -9,9 +9,7 @@
       $_GET['active'] = 1;
     }
 ?>
-
 <div class="container">
-<?php include_once '../includes/errorhandler.inc.php';?>
 <div class="table-responsive">
 
 <table class="table">
@@ -31,9 +29,9 @@
   </thead>
   <tbody>
      <?php
-          $CustomerShowList = new CustomerCntrl();
+          $CustomersFounded = new CustomerCntrl();
           $number = 0;
-          foreach($CustomerShowList->CustomerHandelingList() as $index => $row)
+          foreach($CustomersFounded->SearchCustomer() as $index => $row)
           {
 
               $number++;
@@ -60,10 +58,6 @@
   </tbody>
 </table>
 </div>
-  <?php
-       // $obj2 = new Customer();
-       // $obj2->Pagination(); 
-  ?>
 </div>
 <?php
      require_once '../includes/footer.inc.php'

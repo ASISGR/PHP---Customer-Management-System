@@ -8,7 +8,7 @@
         <form class="registerForm" action="../includes/registercustomer.inc.php" method="POST">
             <h2 class="fs-4">Add new Customer to the system</h2>
                 <?php
-                include_once '../includes/errorhandler.inc.php';
+                    include_once '../includes/errorhandler.inc.php';
                 ?>
             <div class="mb-3" id ='fnamediv'>
                 <label for="firstnameinput" class="form-label">First Name</label>

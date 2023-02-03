@@ -1,10 +1,11 @@
 <?php
-    include_once '../classes/class.customers.php';
+    include_once '../classes/class.customersCntrl.php';
 
     if(isset($_GET['Btn-Delete']))
     {
-        $obj = new Customer();
-        $obj->DeleteCustomer();
+        $Customer = new CustomerCntrl();
+        $Customer->CustomerDelete();
+        header('location: /pages/customerslist.php');
     }
 
 ?>

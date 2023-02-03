@@ -50,16 +50,20 @@ session_start();
                     <li><a class="dropdown-item" href="/pages/customerslist.php?active=1"">Active Customers</a></li>
                     <li><a class="dropdown-item" href="/pages/customerslist.php?active=0">Inactive Customers</a></li>
                   </ul>
-                </li>';
+                </li>
+                <li class="nav-item"><a href="/pages/searchcustomer.php" class="nav-link" aria-current="page">Search Customer</a></li> 
+                ';
           }
         ?>
           
       </ul>
-      <form class="d-flex">
+      <div class="d-flex">
         <?php
           if(isset($_SESSION["loggin"]) && $_SESSION["loggin"] === true){
             echo '<div class="container">
+                
                 <a class="btn btn-primary" href="/pages/addadmin.php">Add Administrator</a>
+                <a class="btn btn-primary" href="addcustomer.php ">Add customer</a>
                 <a class="btn btn-danger" href="/includes/logout.inc.php">Logout</a>
                 </div>';
           }else{
@@ -68,7 +72,7 @@ session_start();
                 </div>';
           }
         ?>
-      </form>
+      </div>
     </div>
   </div>
 </nav>

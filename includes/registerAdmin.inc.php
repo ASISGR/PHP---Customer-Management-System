@@ -1,6 +1,6 @@
 <?php 
 include_once '../classes/class.db.php';
-include_once '../classes/class.users.php';
+include_once '../classes/class.usersContr.php';
 
 if(isset($_POST['btn_Aregister']))
 {
@@ -11,7 +11,8 @@ if(isset($_POST['btn_Aregister']))
     $lName = $_POST['lastName'];
     $phone = $_POST['Phone'];
     $adrress = $_POST['adrressInput'];
-    $NewAcc = new User();
-    $NewAcc->CreateUser($un, $pass, $mail, $fName, $lName, $phone, $adrress);
+    $createAdmin = new UserContrl($un, $pass, $mail, $fName, $lName, $phone, $adrress);
+    $createAdmin->createAdmin();
+    header("Location: /pages/addadmin.php?passwordCreated");
 }
 ?>

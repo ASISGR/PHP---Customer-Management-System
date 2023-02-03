@@ -1,6 +1,6 @@
 <?php
      require_once '../includes/navbar.inc.php';
-     require_once '../classes/class.customers.php';
+     require_once '../classes/class.customersCntrl.php';
      if(!isset($_SESSION["loggin"])){
         header("Location: /?noacces");
       }
@@ -24,8 +24,28 @@
     </thead>
     <tbody>
         <?php
-            $obj = new Customer();
-            $obj->GetCustomerProfile();
+            $cData = new CustomerCntrl();
+            foreach($cData->CustomerData() as $row)
+            {
+                if($row['active'] == 1)
+                {
+                    $row['active'] = 'Active';
+                }else{
+                    $row['active'] = 'Inactive';
+                }
+    
+                echo '<tr>
+                    <td>'.$row['firstname'].'</td>
+                    <td>'.$row['lastname'].'</td>
+                    <td>'.$row['address'].'</td>
+                    <td>'.$row['phone'].'</td>
+                    <td>'.$row['email'].'</td>
+                    <td>'.$row['comments'].'</td>
+                    <td>'.$row['registered_at'].'</td>
+                    <td>'.$row['active'].'</td>
+                    </tr>
+                ';
+            }
         ?>
     </tbody>
     </table>
